@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Login</h1>
+    {% if error.state %}
+        <h2>{{error.msg}}</h2>
+    {% endif %}
+    <form action="{% url 'login' %}" method="POST"> {% csrf_token %}
+        <input type='text' placeholder='아이디' name = 'user_id'/>
+        <input type='password' placeholder='비번' name = 'user_pw'/>
+        <button type = 'submit'> 로그인</button>
+    </form>
+</body>
+</html>
